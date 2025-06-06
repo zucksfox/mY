@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { FaPython, FaJs, FaReact, FaDatabase, FaGitAlt, FaDocker } from 'react-icons/fa';
-import { SiTypescript, SiDjango, SiTailwindcss, SiPostgresql, SiDart } from 'react-icons/si';
+import { FaJs, FaPython, FaReact } from 'react-icons/fa';
+import { SiTypescript, SiTailwindcss, SiDart } from 'react-icons/si';
 
 const Skills = () => {
   const skills = [
