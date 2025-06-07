@@ -70,15 +70,15 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden py-20 md:py-0">
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 md:mb-12">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-secondary-light dark:text-secondary mb-4 font-medium"
+              className="text-secondary-light dark:text-secondary mb-2 md:mb-4 font-medium text-sm md:text-base"
             >
               Hi, my name is
             </motion.p>
@@ -86,7 +86,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-textPrimary-light dark:from-textPrimary to-secondary-light dark:to-secondary"
+              className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-textPrimary-light dark:from-textPrimary to-secondary-light dark:to-secondary"
             >
               Fahrur Anshori
             </motion.h1>
@@ -98,7 +98,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="w-[360px] h-[360px] mx-auto perspective-1000 cursor-pointer mb-12"
+            className="w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[360px] md:h-[360px] mx-auto perspective-1000 cursor-pointer mb-8 md:mb-12"
             onClick={handleClick}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
@@ -131,7 +131,7 @@ const Hero = () => {
                 transition={{ duration: 1 }}
               >
                 <motion.div 
-                  className="w-32 h-32 rounded-full bg-secondary-light/20 dark:bg-secondary/20 mb-6 overflow-hidden"
+                  className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-secondary-light/20 dark:bg-secondary/20 mb-4 md:mb-6 overflow-hidden"
                   animate={isOpening ? {
                     scale: [1, 1.2, 1],
                     rotate: [0, 360],
@@ -145,7 +145,7 @@ const Hero = () => {
                   />
                 </motion.div>
                 <motion.h2 
-                  className="text-2xl font-bold mb-2"
+                  className="text-xl sm:text-2xl font-bold mb-2"
                   animate={isOpening ? {
                     scale: [1, 1.2, 1],
                     color: ["#64ffda", "#ffffff", "#64ffda"]
@@ -155,7 +155,7 @@ const Hero = () => {
                   Just Click Here!!!
                 </motion.h2>
                 <motion.p 
-                  className="text-textSecondary-light dark:text-textSecondary text-center"
+                  className="text-textSecondary-light dark:text-textSecondary text-center text-sm sm:text-base"
                   animate={isOpening ? { opacity: [1, 0] } : {}}
                   transition={{ duration: 0.5 }}
                 >
@@ -176,7 +176,7 @@ const Hero = () => {
                 transition={{ delay: 0.5 }}
               >
                 <motion.h3 
-                  className="text-xl font-bold mb-4"
+                  className="text-lg sm:text-xl font-bold mb-3 md:mb-4"
                   initial={{ y: 20 }}
                   animate={{ y: 0 }}
                   transition={{ delay: 0.7 }}
@@ -184,7 +184,7 @@ const Hero = () => {
                   I need a job plzzzz!!!
                 </motion.h3>
                 <motion.p 
-                  className="text-textSecondary-light dark:text-textSecondary mb-6"
+                  className="text-textSecondary-light dark:text-textSecondary mb-4 md:mb-6 text-sm sm:text-base"
                   initial={{ y: 20 }}
                   animate={{ y: 0 }}
                   transition={{ delay: 0.9 }}

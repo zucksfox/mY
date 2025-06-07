@@ -63,7 +63,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 overflow-hidden">
+    <section id="projects" className="py-12 md:py-20 overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,9 +72,9 @@ const Projects = () => {
           viewport={{ once: true }}
           className="max-w-6xl mx-auto"
         >
-          <h2 className="section-title">Featured Projects</h2>
+          <h2 className="section-title text-2xl md:text-3xl lg:text-4xl">Featured Projects</h2>
           
-          <div className="relative h-[600px] mt-12 perspective-1000">
+          <div className="relative h-[400px] sm:h-[500px] md:h-[600px] mt-8 md:mt-12 perspective-1000">
             <div className="absolute w-full h-full flex items-center justify-center">
               <AnimatePresence initial={false} custom={direction}>
                 <motion.div
@@ -100,46 +100,48 @@ const Projects = () => {
                       paginate(-1);
                     }
                   }}
-                  className="absolute w-full max-w-4xl bg-primary-light dark:bg-primary/50 rounded-xl shadow-2xl overflow-hidden"
+                  className="absolute w-full max-w-sm sm:max-w-md md:max-w-4xl bg-primary-light dark:bg-primary/50 rounded-xl shadow-2xl overflow-hidden p-4 md:p-6"
                   style={{ transformStyle: 'preserve-3d' }}
                 >
-                  <div className="grid md:grid-cols-2 gap-6 p-6">
-                    <div className="relative aspect-video bg-gray-800 rounded-lg overflow-hidden">
+                  <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+                    <div className="relative aspect-video w-full md:w-3/5 bg-gray-800 rounded-lg overflow-hidden">
                       <img
                         src={projects[currentIndex].image}
                         alt={projects[currentIndex].title}
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="flex flex-col justify-center">
-                      <h3 className="text-2xl font-bold mb-4">{projects[currentIndex].title}</h3>
-                      <p className="text-textSecondary-light dark:text-textSecondary mb-6">
+                    <div className="flex flex-col justify-center md:w-2/5">
+                      <h3 className="text-xl sm:text-2xl font-bold mb-2 md:mb-4">{projects[currentIndex].title}</h3>
+                      <p className="text-textSecondary-light dark:text-textSecondary mb-4 md:mb-6 text-sm sm:text-base">
                         {projects[currentIndex].description}
                       </p>
-                      <div className="flex flex-wrap gap-2 mb-6">
+                      <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
                         {projects[currentIndex].tech.map((tech) => (
-                          <span key={tech} className="skill-tag">
+                          <span key={tech} className="skill-tag text-xs sm:text-sm">
                             {tech}
                           </span>
                         ))}
                       </div>
-                      <div className="flex gap-4">
+                      <div className="flex gap-3 md:gap-4">
                         <a
                           href={projects[currentIndex].github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="btn-primary !px-4 !py-2 flex items-center gap-2"
+                          className="btn-primary !px-3 sm:!px-4 !py-2 flex items-center gap-2 text-sm sm:text-base"
                         >
                           <FaGithub /> Code
                         </a>
-                        <a
-                          href={projects[currentIndex].live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-primary !px-4 !py-2 flex items-center gap-2"
-                        >
-                          <FaExternalLinkAlt /> Live Demo
-                        </a>
+                        {projects[currentIndex].live && (
+                          <a
+                            href={projects[currentIndex].live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-primary !px-3 sm:!px-4 !py-2 flex items-center gap-2 text-sm sm:text-base"
+                          >
+                            <FaExternalLinkAlt /> Live Demo
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -149,20 +151,20 @@ const Projects = () => {
 
             {/* Navigation buttons */}
             <button
-              className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-secondary-light/20 dark:bg-secondary/20 text-secondary-light dark:text-secondary hover:bg-secondary-light/30 dark:hover:bg-secondary/30 transition-colors z-10"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-secondary-light/20 dark:bg-secondary/20 text-secondary-light dark:text-secondary hover:bg-secondary-light/30 dark:hover:bg-secondary/30 transition-colors z-10"
               onClick={() => paginate(-1)}
             >
-              <FaChevronLeft size={24} />
+              <FaChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
             </button>
             <button
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-secondary-light/20 dark:bg-secondary/20 text-secondary-light dark:text-secondary hover:bg-secondary-light/30 dark:hover:bg-secondary/30 transition-colors z-10"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-secondary-light/20 dark:bg-secondary/20 text-secondary-light dark:text-secondary hover:bg-secondary-light/30 dark:hover:bg-secondary/30 transition-colors z-10"
               onClick={() => paginate(1)}
             >
-              <FaChevronRight size={24} />
+              <FaChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
             </button>
 
             {/* Dots indicator */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
               {projects.map((_, index) => (
                 <button
                   key={index}
@@ -171,7 +173,7 @@ const Projects = () => {
                     setDirection(direction);
                     setCurrentIndex(index);
                   }}
-                  className={`w-3 h-3 rounded-full transition-colors ${
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors ${
                     index === currentIndex
                       ? 'bg-secondary-light dark:bg-secondary'
                       : 'bg-secondary-light/20 dark:bg-secondary/20'
