@@ -54,7 +54,7 @@ const Hero = () => {
   const socialLinks = [
     {
       icon: <FaGithub size={24} />,
-      href: 'https://github.com/fahrurmon',
+      href: 'https://github.com/zucksfox',
       label: 'GitHub',
     },
     {
@@ -64,7 +64,7 @@ const Hero = () => {
     },
     {
       icon: <FaEnvelope size={24} />,
-      href: 'mailto:fahrurmon@gmail.com',
+      href: 'mailto:fahrurans@gmail.com',
       label: 'Email',
     },
   ];
