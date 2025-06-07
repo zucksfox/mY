@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown } from 'react-icons/fa';
 import { useState, useRef } from 'react';
 
 const Hero = () => {
@@ -98,7 +98,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[360px] md:h-[360px] mx-auto perspective-1000 cursor-pointer mb-8 md:mb-12"
+            className="w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[360px] md:h-[360px] mx-auto perspective-1000 cursor-pointer"
             onClick={handleClick}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
@@ -214,6 +214,36 @@ const Hero = () => {
                 </motion.div>
               </motion.div>
             </motion.div>
+          </motion.div>
+
+          {/* Scroll Down Button */}
+          <motion.div
+            className="text-center pt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.5, duration: 0.5 }}
+          >
+            <motion.button
+              className="p-3 rounded-full bg-secondary-light/20 dark:bg-secondary/20 text-secondary-light dark:text-secondary hover:bg-secondary-light/40 dark:hover:bg-secondary/40 transition-colors"
+              onClick={() => {
+                const projectsSection = document.getElementById('projects');
+                if (projectsSection) {
+                  projectsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              animate={{
+                y: [0, -10, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+            >
+              <FaArrowDown size={24} />
+            </motion.button>
           </motion.div>
         </div>
       </div>

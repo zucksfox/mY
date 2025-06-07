@@ -9,8 +9,9 @@ const Navbar = () => {
 
   const menuItems = [
     { title: 'Home', to: 'home' },
-    { title: 'Skills', to: 'skills' },
+    //{ title: 'Skills', to: 'skills' },
     { title: 'Projects', to: 'projects' },
+    //{ title: 'Fun Tools', to: 'fun-tools' },
   ];
 
   return (
