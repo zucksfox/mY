@@ -181,15 +181,7 @@ const Hero = () => {
                   animate={{ y: 0 }}
                   transition={{ delay: 0.7 }}
                 >
-                  Please work with Me !!!
-                </motion.h3>
-                <motion.h3 
-                  className="text-xl font-bold mb-4"
-                  initial={{ y: 20 }}
-                  animate={{ y: 0 }}
-                  transition={{ delay: 0.7 }}
-                >
-                  I need a job plzz
+                  I need a job plzzzz!!!
                 </motion.h3>
                 <motion.p 
                   className="text-textSecondary-light dark:text-textSecondary mb-6"
