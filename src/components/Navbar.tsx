@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import logoGif from '../assets/zuckf0x.gif';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-2xl font-bold text-secondary">ZucksFox</h1>
+            <img src={logoGif} alt="ZucksFox Logo" className="h-20 w-auto" />
           </motion.div>
 
           {/* Desktop Menu */}
