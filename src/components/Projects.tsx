@@ -100,7 +100,7 @@ const Projects = () => {
                       paginate(-1);
                     }
                   }}
-                  className="absolute w-full max-w-sm sm:max-w-md md:max-w-4xl bg-primary-light dark:bg-primary/50 rounded-xl shadow-2xl overflow-hidden p-4 md:p-6"
+                  className="absolute w-full max-w-sm sm:max-w-md md:max-w-4xl bg-primary-light/60 dark:bg-primary/40 backdrop-blur-md border border-white/20 rounded-xl shadow-2xl overflow-hidden p-4 md:p-6"
                   style={{ transformStyle: 'preserve-3d' }}
                 >
                   <div className="flex flex-col md:flex-row gap-4 md:gap-6">
